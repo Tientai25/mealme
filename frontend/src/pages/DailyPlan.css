@@ -1,0 +1,450 @@
+/* Daily Plan New Design */
+.daily-plan-new {
+  background: #e8f5e9;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* Hero Section */
+.daily-hero {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  padding: 80px 0;
+}
+
+.daily-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-left-content {
+  animation: fadeInUp 0.8s ease;
+}
+
+.daily-title {
+  font-size: 64px;
+  font-weight: 800;
+  color: #1b3409;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.title-italic {
+  font-style: italic;
+  color: #2d5016;
+}
+
+.daily-subtitle {
+  font-size: 16px;
+  color: #4a5f3a;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+/* Form */
+.daily-form {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.form-input-group {
+  margin-bottom: 20px;
+}
+
+.form-input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d5016;
+  margin-bottom: 8px;
+}
+
+.budget-input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.budget-input:focus {
+  outline: none;
+  border-color: #2d5016;
+  box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+}
+
+.btn-generate {
+  width: 100%;
+  background: #2d5016;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-generate:hover:not(:disabled) {
+  background: #1b3409;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 80, 22, 0.3);
+}
+
+.btn-generate:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-sparkle {
+  font-size: 20px;
+}
+
+/* Featured Meal Card */
+.hero-right-image {
+  animation: fadeInRight 0.8s ease;
+}
+
+.featured-meal-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform: rotate(2deg);
+  transition: transform 0.3s ease;
+}
+
+.featured-meal-card:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.featured-meal-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.featured-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  padding: 32px;
+  color: white;
+}
+
+.featured-badge {
+  display: inline-block;
+  background: #4caf50;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.featured-overlay h3 {
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* Plan Summary */
+.plan-summary-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  margin: 40px 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.plan-summary-card h2 {
+  font-size: 28px;
+  color: #1b3409;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.summary-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.summary-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: #f1f8f4;
+  border-radius: 16px;
+}
+
+.summary-stat .stat-icon {
+  font-size: 40px;
+}
+
+.summary-stat strong {
+  display: block;
+  font-size: 32px;
+  color: #2d5016;
+  font-weight: 800;
+}
+
+.summary-stat p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Meals Timeline */
+.meals-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.meal-time-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.meal-time-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.time-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f1f8f4;
+}
+
+.time-icon {
+  font-size: 32px;
+}
+
+.time-header h3 {
+  font-size: 24px;
+  color: #1b3409;
+  font-weight: 700;
+}
+
+.meal-content-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.meal-content-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.meal-info-detail h4 {
+  font-size: 22px;
+  color: #1b3409;
+  margin-bottom: 12px;
+}
+
+.meal-info-detail p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.meal-meta-tags {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.meal-meta-tags span {
+  background: #f1f8f4;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #2d5016;
+  font-weight: 600;
+}
+
+.btn-view-recipe {
+  display: inline-block;
+  background: #2d5016;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-view-recipe:hover {
+  background: #1b3409;
+  transform: translateX(4px);
+}
+
+.no-meal-text {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+}
+
+/* Why Section */
+.why-section {
+  margin-top: 80px;
+}
+
+.why-title {
+  font-size: 36px;
+  color: #1b3409;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.why-card {
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+}
+
+.why-green {
+  background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%);
+}
+
+.why-dark {
+  background: #2d2d2d;
+}
+
+.why-blue {
+  background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+}
+
+.why-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.why-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.why-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.why-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.why-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.why-btn-light {
+  background: white;
+  color: #2d2d2d;
+}
+
+.why-btn-light:hover {
+  background: #f5f5f5;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .daily-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .meal-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .daily-title {
+    font-size: 42px;
+  }
+
+  .summary-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

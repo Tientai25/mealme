@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Bánh mì trứng",
+    "description": "Bánh mì giòn kẹp trứng ốp la, rau sống và nước sốt",
+    "ingredients": ["bánh mì", "trứng", "rau sống", "dưa leo", "nước sốt"],
+    "calories": 350,
+    "price": 15000,
+    "cookTime": 10,
+    "image": "https://images.unsplash.com/photo-1619096252214-ef06c45683e3?w=400",
+    "tags": ["cheap", "healthy"]
+  },
+  {
+    "name": "Bánh mì bơ phô mai",
+    "description": "Bánh mì nướng với bơ và phô mai tan chảy",
+    "ingredients": ["bánh mì", "bơ", "phô mai"],
+    "calories": 420,
+    "price": 20000,
+    "cookTime": 8,
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400",
+    "tags": ["gain_weight", "cheap"]
+  },
+  {
+    "name": "Cơm gà",
+    "description": "Cơm trắng với gà luộc hoặc gà nướng, nước mắm gừng",
+    "ingredients": ["cơm", "gà", "gừng", "nước mắm"],
+    "calories": 550,
+    "price": 35000,
+    "cookTime": 30,
+    "image": "https://images.unsplash.com/photo-1598511726623-d2e9996892f0?w=400",
+    "tags": ["healthy", "gain_weight"]
+  },
+  {
+    "name": "Salad rau trộn",
+    "description": "Salad rau xanh với sốt dầu giấm, cà chua bi",
+    "ingredients": ["rau xà lách", "cà chua", "dưa leo", "dầu ô liu", "giấm"],
+    "calories": 150,
+    "price": 25000,
+    "cookTime": 5,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
+    "tags": ["lose_weight", "healthy"]
+  },
+  {
+    "name": "Mì trứng xào rau",
+    "description": "Mì trứng xào với rau củ và trứng",
+    "ingredients": ["mì", "trứng", "cà rót", "bắp cải", "nước tương"],
+    "calories": 480,
+    "price": 30000,
+    "cookTime": 15,
+    "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400",
+    "tags": ["cheap", "maintain"]
+  },
+  {
+    "name": "Phở bò",
+    "description": "Phở bò truyền thống với nước dùng thơm ngon",
+    "ingredients": ["bánh phở", "thịt bò", "hành", "ngò", "giá đỗ"],
+    "calories": 450,
+    "price": 40000,
+    "cookTime": 20,
+    "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400",
+    "tags": ["healthy", "maintain"]
+  },
+  {
+    "name": "Cơm chiên dương châu",
+    "description": "Cơm chiên với tôm, xúc xích, trứng và rau",
+    "ingredients": ["cơm", "tôm", "xúc xích", "trứng", "đậu hà lan"],
+    "calories": 620,
+    "price": 35000,
+    "cookTime": 15,
+    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400",
+    "tags": ["gain_weight", "maintain"]
+  },
+  {
+    "name": "Súp bí đỏ",
+    "description": "Súp bí đỏ kem mịn màng, bổ dưỡng",
+    "ingredients": ["bí đỏ", "sữa tươi", "hành tây", "tỏi"],
+    "calories": 180,
+    "price": 28000,
+    "cookTime": 25,
+    "image": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=400",
+    "tags": ["lose_weight", "healthy"]
+  },
+  {
+    "name": "Gà nướng mật ong",
+    "description": "Gà nướng với mật ong và gia vị thơm ngon",
+    "ingredients": ["gà", "mật ong", "tỏi", "tiêu", "nước tương"],
+    "calories": 520,
+    "price": 45000,
+    "cookTime": 35,
+    "image": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400",
+    "tags": ["gain_weight", "healthy"]
+  },
+  {
+    "name": "Bún chả",
+    "description": "Bún với chả nướng, nước mắm chua ngọt",
+    "ingredients": ["bún", "thịt lợn", "nước mắm", "rau sống", "dưa leo"],
+    "calories": 500,
+    "price": 35000,
+    "cookTime": 25,
+    "image": "https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400",
+    "tags": ["healthy", "maintain"]
+  },
+  {
+    "name": "Cháo gà",
+    "description": "Cháo gà nóng hổi, dễ tiêu hóa",
+    "ingredients": ["gạo", "gà", "gừng", "hành lá"],
+    "calories": 280,
+    "price": 25000,
+    "cookTime": 40,
+    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400",
+    "tags": ["lose_weight", "healthy", "cheap"]
+  },
+  {
+    "name": "Xôi gà",
+    "description": "Xôi nếp với gà xé và hành phi",
+    "ingredients": ["gạo nếp", "gà", "hành", "nước mắm"],
+    "calories": 580,
+    "price": 30000,
+    "cookTime": 45,
+    "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400",
+    "tags": ["gain_weight", "cheap"]
+  },
+  {
+    "name": "Bò bít tết",
+    "description": "Bít tết bò với khoai tây chiên và salad",
+    "ingredients": ["thịt bò", "khoai tây", "bơ", "rau salad"],
+    "calories": 680,
+    "price": 80000,
+    "cookTime": 20,
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400",
+    "tags": ["gain_weight", "healthy"]
+  },
+  {
+    "name": "Canh chua cá",
+    "description": "Canh chua với cá, dứa, cà chua và rau",
+    "ingredients": ["cá", "dứa", "cà chua", "rau muống", "me"],
+    "calories": 220,
+    "price": 35000,
+    "cookTime": 20,
+    "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=400",
+    "tags": ["lose_weight", "healthy"]
+  },
+  {
+    "name": "Bánh xèo",
+    "description": "Bánh xèo giòn với tôm, thịt và giá đỗ",
+    "ingredients": ["bột bánh xèo", "tôm", "thịt", "giá đỗ", "rau sống"],
+    "calories": 450,
+    "price": 30000,
+    "cookTime": 20,
+    "image": "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=400",
+    "tags": ["maintain", "cheap"]
+  },
+  {
+    "name": "Cơm sườn",
+    "description": "Cơm với sườn nướng, trứng ốp la",
+    "ingredients": ["cơm", "sườn", "trứng", "dưa leo", "cà chua"],
+    "calories": 650,
+    "price": 40000,
+    "cookTime": 25,
+    "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400",
+    "tags": ["gain_weight", "maintain"]
+  },
+  {
+    "name": "Smoothie bơ",
+    "description": "Sinh tố bơ sữa mát lạnh, bổ dưỡng",
+    "ingredients": ["bơ", "sữa đặc", "đá", "sữa tươi"],
+    "calories": 320,
+    "price": 25000,
+    "cookTime": 5,
+    "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400",
+    "tags": ["gain_weight", "healthy"]
+  },
+  {
+    "name": "Gỏi cuốn",
+    "description": "Gỏi cuốn tôm thịt với rau sống và bún",
+    "ingredients": ["bánh tráng", "tôm", "thịt", "bún", "rau sống"],
+    "calories": 180,
+    "price": 20000,
+    "cookTime": 15,
+    "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=400",
+    "tags": ["lose_weight", "healthy", "cheap"]
+  },
+  {
+    "name": "Mì Ý sốt bò bằm",
+    "description": "Mì Ý với sốt cà chua và thịt bò bằm",
+    "ingredients": ["mì Ý", "thịt bò", "cà chua", "tỏi", "phô mai"],
+    "calories": 580,
+    "price": 45000,
+    "cookTime": 25,
+    "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400",
+    "tags": ["maintain", "healthy"]
+  },
+  {
+    "name": "Cơm rang trứng",
+    "description": "Cơm rang đơn giản với trứng và hành",
+    "ingredients": ["cơm", "trứng", "hành", "nước tương"],
+    "calories": 420,
+    "price": 20000,
+    "cookTime": 10,
+    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400",
+    "tags": ["cheap", "maintain"]
+  }
+]
