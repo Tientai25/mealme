@@ -29,6 +29,8 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     const { data } = await API.post('/auth/login', { email, password });
+    localStorage.setItem('accessToken', data.accessToken);
+    localStorage.setItem('refreshToken', data.refreshToken);
     localStorage.setItem('user', JSON.stringify(data));
     setUser(data);
     return data;
@@ -36,6 +38,8 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (username, email, password, goal) => {
     const { data } = await API.post('/auth/register', { username, email, password, goal });
+    localStorage.setItem('accessToken', data.accessToken);
+    localStorage.setItem('refreshToken', data.refreshToken);
     localStorage.setItem('user', JSON.stringify(data));
     setUser(data);
     return data;
@@ -43,6 +47,8 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     await API.post('/auth/logout');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
     localStorage.removeItem('user');
     setUser(null);
   };

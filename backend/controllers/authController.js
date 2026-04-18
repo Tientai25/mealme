@@ -24,26 +24,13 @@ const register = async (req, res) => {
   const accessToken = generateAccessToken(user._id);
   const refreshToken = generateRefreshToken(user._id);
   
-  // Lưu cả 2 token vào httpOnly cookies
-  res.cookie('accessToken', accessToken, {
-    httpOnly: true,
-    secure: true, // Always true for production
-    sameSite: 'none', // Required for cross-origin
-    maxAge: 15 * 60 * 1000 // 15 phút
-  });
-  
-  res.cookie('refreshToken', refreshToken, {
-    httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-    maxAge: 7 * 24 * 60 * 60 * 1000 // 7 ngày
-  });
-  
   res.status(201).json({
     _id: user._id,
     username: user.username,
     email: user.email,
-    goal: user.goal
+    goal: user.goal,
+    accessToken,
+    refreshToken
   });
 };
 
@@ -57,26 +44,13 @@ const login = async (req, res) => {
   const accessToken = generateAccessToken(user._id);
   const refreshToken = generateRefreshToken(user._id);
   
-  // Lưu cả 2 token vào httpOnly cookies
-  res.cookie('accessToken', accessToken, {
-    httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-    maxAge: 15 * 60 * 1000
-  });
-  
-  res.cookie('refreshToken', refreshToken, {
-    httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-    maxAge: 7 * 24 * 60 * 60 * 1000
-  });
-
   res.json({
     _id: user._id,
     username: user.username,
     email: user.email,
-    goal: user.goal
+    goal: user.goal,
+    accessToken,
+    refreshToken
   });
 };
 
@@ -124,14 +98,6 @@ const refreshToken = async (req, res) => {
 
 // POST /api/auth/logout
 const logout = async (req, res) => {
-  res.cookie('accessToken', '', {
-    httpOnly: true,
-    expires: new Date(0)
-  });
-  res.cookie('refreshToken', '', {
-    httpOnly: true,
-    expires: new Date(0)
-  });
   res.json({ message: 'Logged out successfully' });
 };
 
