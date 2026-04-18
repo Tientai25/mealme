@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { LanguageContext } from '../context/LanguageContext';
+import { useSocket } from '../context/SocketContext';
 import { getFavorites, toggleFavorite } from '../services/api';
 import { Link } from 'react-router-dom';
 import './Favorites.css';
@@ -8,6 +9,7 @@ import './Favorites.css';
 const Favorites = () => {
   const { user } = useContext(AuthContext);
   const { t } = useContext(LanguageContext);
+  const { emitFavorite } = useSocket();
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
@@ -29,8 +31,13 @@ const Favorites = () => {
 
   const handleFavorite = async (mealId) => {
     try {
+      const meal = meals.find(m => m._id === mealId);
       await toggleFavorite(mealId);
       setMeals(meals.filter((m) => m._id !== mealId));
+      
+      if (meal) {
+        emitFavorite(meal.name);
+      }
     } catch (error) {
       alert(t.favorites.errorRemoving);
     }

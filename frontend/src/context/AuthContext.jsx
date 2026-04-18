@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import API from '../services/api';
 
 export const AuthContext = createContext();
 
@@ -8,62 +8,45 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Không còn check localStorage
-    fetchUser();
+    // Check if user is logged in
+    const token = localStorage.getItem('token');
+    const savedUser = localStorage.getItem('user');
     
-    // Auto refresh token mỗi 14 phút
-    const interval = setInterval(() => {
-      refreshAccessToken();
-    }, 14 * 60 * 1000);
-    
-    return () => clearInterval(interval);
+    if (token && savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+    setLoading(false);
   }, []);
 
-  const fetchUser = async () => {
-    try {
-      const { data } = await axios.get('/api/auth/me', { withCredentials: true });
-      setUser(data);
-    } catch (error) {
-      // Nếu access token hết hạn, thử refresh
-      await refreshAccessToken();
-    } finally {
-      setLoading(false);
-    }
-  };
-  
-  const refreshAccessToken = async () => {
-    try {
-      const { data } = await axios.post('/api/auth/refresh', {}, { withCredentials: true });
-      setUser(data);
-    } catch (error) {
-      // Refresh token hết hạn, logout
-      setUser(null);
-    }
-  };
-
   const login = async (email, password) => {
-    const { data } = await axios.post('/api/auth/login', { email, password }, { withCredentials: true });
+    const { data } = await API.post('/auth/login', { email, password });
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify(data));
     setUser(data);
     return data;
   };
 
   const register = async (username, email, password, goal) => {
-    const { data } = await axios.post('/api/auth/register', { username, email, password, goal }, { withCredentials: true });
+    const { data } = await API.post('/auth/register', { username, email, password, goal });
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify(data));
     setUser(data);
     return data;
   };
 
-  const logout = async () => {
-    try {
-      await axios.post('/api/auth/logout', {}, { withCredentials: true });
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     setUser(null);
   };
 
+  const setUserData = (userData) => {
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, loading }}>
+    <AuthContext.Provider value={{ user, setUser: setUserData, login, register, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

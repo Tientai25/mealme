@@ -2,6 +2,7 @@ import { useContext, useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { LanguageContext } from '../context/LanguageContext';
+import NotificationBell from './NotificationBell';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -80,6 +81,8 @@ const Navbar = () => {
                 <Link to="/suggest" onClick={closeMenu} className="nav-link">{t.nav.explore || 'Explore'}</Link>
                 <Link to="/weekly-plan" onClick={closeMenu} className="nav-link">{t.nav.planner || 'Planner'}</Link>
                 <Link to="/favorites" onClick={closeMenu} className="nav-link">{t.nav.favorites}</Link>
+                
+                <NotificationBell />
                 
                 <Link to="/settings" onClick={closeMenu} className="settings-icon">
                   ⚙️

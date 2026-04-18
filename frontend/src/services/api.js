@@ -1,33 +1,30 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: '/api',
-  withCredentials: true // Gửi cookies với mọi request
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 });
 
-// Interceptor để tự động refresh token khi hết hạn
+// Add token to requests
+API.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+// Response interceptor for error handling
 API.interceptors.response.use(
   (response) => response,
   async (error) => {
-    const originalRequest = error.config;
-    
-    // Nếu lỗi 401 và chưa retry
-    if (error.response?.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-      
-      try {
-        // Gọi refresh token
-        await axios.post('/api/auth/refresh', {}, { withCredentials: true });
-        
-        // Retry request gốc
-        return API(originalRequest);
-      } catch (refreshError) {
-        // Refresh thất bại, redirect login
-        window.location.href = '/login';
-        return Promise.reject(refreshError);
-      }
+    if (error.response?.status === 401) {
+      // Token expired or invalid, redirect to login
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/login';
     }
-    
     return Promise.reject(error);
   }
 );
