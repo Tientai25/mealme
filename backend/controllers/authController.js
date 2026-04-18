@@ -27,15 +27,15 @@ const register = async (req, res) => {
   // Lưu cả 2 token vào httpOnly cookies
   res.cookie('accessToken', accessToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    secure: true, // Always true for production
+    sameSite: 'none', // Required for cross-origin
     maxAge: 15 * 60 * 1000 // 15 phút
   });
   
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    secure: true,
+    sameSite: 'none',
     maxAge: 7 * 24 * 60 * 60 * 1000 // 7 ngày
   });
   
@@ -60,15 +60,15 @@ const login = async (req, res) => {
   // Lưu cả 2 token vào httpOnly cookies
   res.cookie('accessToken', accessToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    secure: true,
+    sameSite: 'none',
     maxAge: 15 * 60 * 1000
   });
   
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    secure: true,
+    sameSite: 'none',
     maxAge: 7 * 24 * 60 * 60 * 1000
   });
 
@@ -106,8 +106,8 @@ const refreshToken = async (req, res) => {
     // Lưu access token mới vào cookie
     res.cookie('accessToken', newAccessToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      secure: true,
+      sameSite: 'none',
       maxAge: 15 * 60 * 1000
     });
     
