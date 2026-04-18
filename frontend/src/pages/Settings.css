@@ -731,22 +731,25 @@
     border-right: none;
     border-bottom: 1px solid #e0e0e0;
     padding: 20px;
+    min-height: auto;
   }
 
   .sidebar-header {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .sidebar-nav {
     flex-direction: row;
     overflow-x: auto;
-    gap: 12px;
+    gap: 8px;
     padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-item {
     white-space: nowrap;
     flex-shrink: 0;
+    padding: 10px 16px;
   }
 
   .sidebar-footer {
@@ -754,12 +757,13 @@
   }
 
   .settings-main {
-    padding: 32px 24px;
+    padding: 24px 20px;
   }
 
   .content-grid,
   .preferences-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .preferences-sidebar {
@@ -768,21 +772,30 @@
 }
 
 @media (max-width: 768px) {
+  .settings-page-new {
+    padding-top: 60px;
+  }
+
   .settings-sidebar-new {
-    padding: 16px;
+    padding: 16px 12px;
   }
 
   .sidebar-header h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .sidebar-header p {
     font-size: 12px;
   }
 
+  .sidebar-nav {
+    gap: 6px;
+  }
+
   .nav-item {
-    padding: 10px 14px;
+    padding: 8px 12px;
     font-size: 13px;
+    gap: 8px;
   }
 
   .nav-icon {
@@ -790,11 +803,11 @@
   }
 
   .settings-main {
-    padding: 24px 16px;
+    padding: 20px 16px;
   }
 
   .content-header h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .content-header p {
@@ -802,41 +815,60 @@
   }
 
   .profile-photo-card {
-    padding: 32px 24px;
+    padding: 28px 20px;
   }
 
   .photo-circle {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
   .photo-circle .initials {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .profile-photo-card h3 {
     font-size: 16px;
   }
 
+  .profile-photo-card p {
+    font-size: 12px;
+  }
+
   .profile-form-card {
-    padding: 24px;
+    padding: 20px;
+  }
+
+  .form-field {
+    margin-bottom: 20px;
+  }
+
+  .form-field label {
+    font-size: 13px;
+  }
+
+  .input-with-icon-right input {
+    padding: 11px 38px 11px 14px;
+    font-size: 14px;
   }
 
   .form-actions {
     flex-direction: column;
+    gap: 10px;
   }
 
   .btn-save,
   .btn-cancel {
     width: 100%;
+    padding: 11px 24px;
   }
 
   .member-perk-card {
-    padding: 32px 24px;
+    padding: 28px 20px;
   }
 
   .perk-content h3 {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .perk-content p {
@@ -844,16 +876,24 @@
   }
 
   .preferences-form {
-    padding: 24px;
+    padding: 20px;
+  }
+
+  .select-field,
+  .tag-input-wrapper input {
+    padding: 11px 14px;
+    font-size: 14px;
   }
 
   .pref-stats {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .premium-card {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
 
   .btn-upgrade {
@@ -862,12 +902,18 @@
 
   .tip-box {
     flex-direction: column;
-    padding: 20px;
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .language-card-new {
+    padding: 18px;
+    gap: 16px;
   }
 
   .language-footer {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .btn-reset,
